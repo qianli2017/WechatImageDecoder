@@ -52,9 +52,9 @@ public class WxImgDecoder {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 			
 			String jpgFile = "";
-			String type = guessImgFormat(datFile);
+			String type = guessImgType(datFile);
 			if(type.length() != 3){
-				System.out.println(datFile.getName()+":不能转换该dat文件为正确的图片格式 can NOT decode.");
+				System.out.println(datFile.getName()+":涓嶈兘杞崲璇at鏂囦欢涓烘纭殑鍥剧墖鏍煎紡 can NOT decode.");
 				return ;
 			}
 			jpgFile = sdf.format(d) + "." + type;
@@ -91,7 +91,7 @@ public class WxImgDecoder {
 		}
 	}
 	
-	public static String guessImgFormat(File f){
+	public static String guessImgType(File f){
 		try {
 			FileInputStream fis = new FileInputStream(f);
 			//read the first two bytes from the file for guessing image type
